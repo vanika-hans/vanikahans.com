@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Vanika Hans</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="Projects.html">Back to Projects</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <!--<a class="nav-link" href="index.html">Embedded Systems</a> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/tiva.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Interactive Tic-Tac-Toe</h1>
+              <span class="subheading">Final Project for Applications of Embedded Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+			
+		<h1 style="text-align: center;"><strong>MSP432p401R Launchpad Tic-Tac-Toe Project</strong></h1>
+<img class="" src="http://www.explorelabs.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/s/msp-exp432p401r.jpg" width="244" height="171" /> <p> MSP432P401R LaunchPad Kit </p>
+
+<img class="" src="http://43oh.com/wp-content/uploads/2015/08/educational_boosterPack_mkII_m2_energia_overview.jpg" width="244" height="171" /> <p>MKII Educational BoosterPack </p>
+
+<p>
+<a href="http://www.ti.com/lit/ds/symlink/msp432p401r.pdf">Link to MSP432P401R LaunchPad Datasheet</a>
+<a href="http://www.findic.us/boostxl-edumkii-datasheet-pdf-en-pQ821GXe5.html">Link to MKII Educational BoosterPack Datasheet</a>
+
+</p>
+
+<h2><strong>Project Objective:</strong></h2>
+<p> This project was a final project for an Embedded Systems course. My group (consisting of Kristina Brunsgaard, Frederick Norwood, and myself) decided to combine the basic embedded systems concepts covered in the course, which included learning how to to efficiently design embedded systems, program in C effectively, gain a conceptual understanding of microcontroller architecture and how to interact and configure input and output devices such as timers, analog-to-digital conversion, communication protocol, and sensors.</p>
+</p>Our project was a simple game of Tic-Tac-Toe utilizing button and joystick interrupts, UART, LCD Display utilizing a SPI library,  and LEDs. </p>
+
+<h2><strong>Non-Technical Overview of Implementation:
+</strong>
+Please view the block diagram with a high-level view of each module <a href="https://drive.google.com/file/d/0Bwa-f38ZJ1fGbGRpSkJnQ0loYlk/view?usp=sharing" target="_blank" rel="noopener">here.
+</a></h2>
+<ol>
+ 	<li><em> <span style="text-decoration: underline;">Configurations:</span></em> Block to configure ADC, UART, Buttons and to Enable Interrupts and Initialize Display.</li>
+ 	<li><em> <span style="text-decoration: underline;">_sleep() mode: </span></em> Condition that the microcontroller returns to when waiting for an interrupt flag.</li>
+ 	<li><em> <span style="text-decoration: underline;">Button interrupts:</span> </em>Handles anytime a user pushes a button. The button that is pressed is directed to the Case Statement Module.</li>
+ 	<li><em> <span style="text-decoration: underline;">Joystick Interrupts/Analog-to-Digital Conversion:</span> </em>Handles anytime a user moves the joystick. The ADC values recorded here are sent to the ADC module that correlates 1, 2, 3, or 4 for each of the respective directions. This data is sent forward to the Case Statement Module.</li>
+ 	<li><em> <span style="text-decoration: underline;">Case Statements:</span> </em>Based off of inputs sent to this module, this module is responsible for directing the next action to be taken. For example, if the input to this block is the initialize flag, it will send a signal to the Display Board Module to keep going through the initialization menu. Once the menu is complete, it will start taking joystick movements and adjusting the position on the LCD Screen.</li>
+ 	<li><em> <span style="text-decoration: underline;">Button A:</span> </em>Used in combination with the joystick movements, as a button push is needed to confirm a spot.</li>
+ 	<li><em> <span style="text-decoration: underline;">Player Won?:</span> </em>Checks for 3-in-a-row and diagonals. If no one wins, it sends the selected spot to the Display Board Module.</li>
+ 	<li><em> <span style="text-decoration: underline;">Button B:</span> </em>At any time during the game, a player can reset the board.</li>
+ 	<li><em> <span style="text-decoration: underline;">Display Board:</span> </em>Displays everything sent to the board.</li>
+ 	<li><em> <span style="text-decoration: underline;">Logging:</span> </em>Logs everything on a Realterm Screen.</li>
+</ol>
+<img class="size-medium wp-image-53 aligncenter" src="https://ecetp.colorado.edu/vanikahans/wp-content/uploads/sites/5/2017/03/tictactoe-300x218.png" alt="" width="300" height="218" />
+<h2><strong>Technical Overview of Implementation</strong></h2>
+<!--Please reference code at {insert GitHub link} -->
+
+<p>
+<em><span style="text-decoration: underline;"><strong>Configurations:</strong></span></em>
+This block includes all of our configurations as completed in main. The configureserialport() function configures the UART pins to primary mode and sets a 115200 BAUD rate. The configureADC() function configures the ADC with reference voltage of 1.2V, 14-bit resolution, and single-conversion. It also maps the two joystick axes to the ADC. The configurebuttons() enables button interrupts, sets edge triggering, and sets it to pull-up resistors. Each one of these functions also enables the device-specific interrupt in the NVIC interrupt controller. Lastly, the setdisplay() function utilizes the graphics library to initialize the display on the LCD screen, set the default screen orientation as up, initialize the graphs foreground, background, and font, and write out initialization messages on the screen.
+</p>
+<p>
+<em><span style="text-decoration: underline;"><strong>Sleep Mode:</strong></span></em>
+This block on the diagram represents a central "check-in" point, where after each individual process undergoes its function, it returns back to the main() loop. After the configurations are complete, main() enters a while loop, where sampling and conversion for the ADC begins, and the controller is put into sleep mode until an interrupt occurs. Note that each ISR returns back to this exact point in the Sleep Mode block.
+</p>
+<p>
+<em><span style="text-decoration: underline;"><strong>Joystick and Button Interrupts, Analog-to-Digital (ADC)</strong></span></em>
+Immediately after a joystick interrupt occurs, the ADC outputs the discrete ADC values, stores each value for up and down movement in ADC14MEM[0], and stores each right and left movement in ADC14MEM[1]. Each one of these outputs is inputted to the ISRs, where depending on each one of these values, a different switch statement is called. There is also an ISR for when buttons are pressed on the Boosterpack, which similarly call a switch statement.
+</p>
+<p>
+<em><span style="text-decoration: underline;"><strong>Switch Statements:</strong></span></em>
+As mentioned, each ADC value or button press serve as an input to each case statement, where each different case leads to different parts of the game being displayed on the screen. As the physical tic-tac-toe values on the board were created using a global array with spaces in the spots of the X's and O's, the board itself needed to created independent of array, which is incorporated into the function calling the switch statement. However, each of the case statements are divided into their own functions. The left, right, up, and down case statements change the "row" or "col" variables to be values 0-2 depending on the direction the joystick was moved. These statements also briefly display a small circle at specific locations on the screen depending on the current value of the row and column variables. The Init case statement does exactly the same as these other case statements, the only difference that the board is not displayed here; this was put in so the user would know that the game was started.
+</p>
+<p>
+Further, after a user was able to actually choose their spot, the Button A case statement allowed a user to actually confirm their position, which really meant storing this "X" or "O" in the global array. If the spot has already been selected, a player will be allowed to try again to find another spot. Once either player won, the board would be reset allowing the two players to have a rematch. If either player wants to reset the board during the game without starting from all the introductory screens, a user can use the Button B case statement to do this.
+</p>
+<p>
+<em><span style="text-decoration: underline;"><strong>__sleep() mode:</strong></span></em>
+Note that after when the board is reset, a player chooses a spot, or a player simply hovers over a spot, each part goes back to the Sleep Mode block, which waits for another interrupt to occur. In fact, once the game is initialized, almost each process goes back to sleep mode until a winner is determined.
+</p>
+<p>
+<em><span style="text-decoration: underline;"><strong>Player Won?:</strong></span></em>
+This block essentially denotes the part of our code that checks if a row or column has three X's or O's, as well as the diagonals. If a player won, a green LED lights up, and if it's a tie then the red LED lights up. However, whether the game is over or if one party has won, either the controller goes back to the sleep() mode in main, or it goes to the "Play Again?" block that resets the board.
+</p>
+<p>
+<em><span style="text-decoration: underline;"><strong>Logging:</strong></span></em>
+Although not physically connected to each specific block in Figure 1, our project also includes a logging portion that monitors each and every significant detail and sends it to the UART. The following is a snippet of what was displayed on RealTerm.
+</p> <p>
+<img class="alignnone size-medium wp-image-58" src="https://ecetp.colorado.edu/vanikahans/wp-content/uploads/sites/5/2017/03/logger-300x191.png" alt="" width="400" height="291" />
+</p>
+<p>
+<em><span style="text-decoration: underline;"><strong>NOT PICTURED: Easter Eggs (literally):</strong></span></em>
+Although not included on the block diagram, press up 9 times when playing the game. You will encounter an "easter egg" in the most literal sense. Below is a picture of the easter-egg that pops up on the screen.
+</p>
+
+<h2><strong>Libraries Used:</strong></h2>
+<ol>
+ 	<li>Crystalfrontz128x128ST7735.h</li>
+ 	<li>grlib.h</li>
+ 	<li>driverlib.h</li>
+</ol>
+<h5>For more Details, Please View full project documentation <a href="https://drive.google.com/file/d/0Bwa-f38ZJ1fGOVctdEJIQS1MLUk/view?usp=sharing" target="_blank" rel="noopener">Here</a>.</h5>
+			
+			
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
