@@ -17,11 +17,17 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
   font-weight: 800;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+h6 {
+	font-weight: 800;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-color: white;
+}
+
 
 a {
   color: #212529;
