@@ -110,6 +110,46 @@ table {
 	overflow-wrap: break-word ;
 }
 
+
+.collapsible {
+  background-color: #afeeee;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
+
+.active, .collapsible:hover {
+  background-color: #48d1cc;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+th, td {
+  padding: 7px;
+  text-align: left;
+}
     </style>
 
 
@@ -205,6 +245,7 @@ table {
 	</div> 
 	<br>
 
+
 <table>
 
   <tr>
@@ -226,8 +267,56 @@ table {
 </table>
 <br>
 
-	</div> <!-- To undo weird margin formatting -->
 	
+
+<p style="font-weight: bold; text-align: center;">Quick Links:</p>
+<button type="button" class="collapsible">Career: Learnings, Advice, Tips, Best Practices</button>
+<div class="content">
+<table>
+  <tr style="padding-top: 10px; padding-bottom:10px">
+    <td><a href="#post2">Learnings From My First Job in Industry</a></td>
+  </tr>
+</table>
+
+</div>
+<button type="button" class="collapsible">Tech Guides</button>
+<div class="content">
+<table>
+  <tr>
+    <td><a href="#post4">Basic Git Commands</a></td>
+  </tr>
+  <tr>
+    <td><a href="#post4">How to Use VIM/GVIM</a></td>
+  </tr>
+</table>
+
+</div>
+<button type="button" class="collapsible">Book Summaries/Reviews</button>
+<div class="content">
+<table>
+  <tr>
+    <td><a href="#post4">How to Win Friends and Influence People</a></td>
+  </tr>
+</table>
+
+</div>
+
+<button type="button" class="collapsible">Random Thought Splurge</button>
+<div class="content">
+<table>
+  <tr>
+    <td color: #A569BD><a href="#post1">Personality Types? Zodiacs? Intro- vs Extro-version?</a></td>
+  </tr>
+  <tr>
+    <td><a href="#post3">Is Anger Truly a Natural Emotion?</a></td>
+  </tr>
+</table>
+
+</div>
+<br>
+<br>
+
+	</div> <!-- To undo weird margin formatting -->
 	<div class="parallax" style="background-image: url('img/mthood.jpg'); filter:opacity(20%) saturate(3) "></div>
 	   <div class="centered">
 			<div class="overlay"></div>
@@ -404,6 +493,22 @@ window.onclick = function(event) {
 </script>
 
 
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
 
 
 </html>
