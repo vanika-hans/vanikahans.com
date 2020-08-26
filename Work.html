@@ -1,5 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+	
+	.parallax {
+	/* The image used */
+	filter:opacity(10%) saturate(3);
+
+
+    /* Set a specific height */
+    min-height: 700px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	}
+	
+	.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+
+img {
+	width: auto ;
+	max-width: 100% ;
+	height: auto;
+}
+
+    </style>
+
+
 
   <head>
 
@@ -48,7 +147,23 @@
       </div>
     </nav>
 
-    <!-- Page Header -->
+<div class="parallax" style="background-image: url('img/office.jpg'); filter:opacity(30%)"></div>
+	   <div class="centered">
+	   		<h1 style="text-align:center">Work Experience</h1>
+				<div>
+					<span class="subheading">Industry Projects</span>
+					<form method="get">
+				</div>
+
+
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+	</div> 
+	<br>
+
+    <!-- Page Header 
     <header class="masthead" style="background-image: url('img/office.jpg')">
       <div class="overlay"></div>
       <div class="container">
@@ -63,6 +178,7 @@
       </div>
     </header>
 
+    -->
     <!-- Main Content -->
     <div class="container">
       <div class="row">
@@ -72,7 +188,7 @@
 			<p>    </p>
 			<p>    </p>
 			<h3>Final Presentation </h3>
-			    <object data="img/Final_Presentation_Intel.pdf" type="application/pdf" width="900" height="700"> </object>
+			    <object data="img/Final_Presentation_Intel.pdf" type="application/pdf" width="100%" height="400"> </object>
 			<p>    </p>
 			<p>    </p>
 			<p>    </p>
@@ -83,6 +199,25 @@
       </div>
     </div>
     <hr>
+
+	</div> <!-- To undo weird margin formatting -->
+	</div>
+	<div class="parallax" style="background-image: url('img/mthood.jpg'); filter:opacity(20%) saturate(3) "></div>
+	   <div class="centered">
+			<div class="overlay"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-md-13 mx-auto">
+						</div>
+					</div>
+				</div>
+		</div>
+	<div>	
+
+	<div class="container">
+		<div class="row">
+	</div> 
+	<br>
 
     <!-- Footer -->
     <footer>
